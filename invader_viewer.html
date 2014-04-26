@@ -22,6 +22,13 @@
 				display:block;
 
 			}
+			
+			#loading {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left:-30px;
+			}
 
 			a { color: skyblue }
 			.button { background:#999; color:#eee; padding:0.2em 0.5em; cursor:pointer }
@@ -42,16 +49,26 @@
 			<a href="http://artsat.jp/invader" target="_blank">ARTSAT1:INVADER</a> -
 			3D Viewer by <a href="https://github.com/ARTSAT" target="_blank">ARTSAT Project</a>
 		</div>
+		
+		<div id="loading">
+			<img src="images/loading.gif">
+		</div>
 
-		<script src="threejs/three.min.js"></script>
-		<script src="threejs/STLLoader.js"></script>
-		<script src="threejs/Detector.js"></script>
-		<script src="threejs/stats.min.js"></script>
-		<script src="threejs/OrbitControls.js"></script>
-
+		<script src="js/three.min.js"></script>
+		<script src="js/STLLoader.js"></script>
+		<script src="js/Detector.js"></script>
+		<script src="js/stats.min.js"></script>
+		<script src="js/OrbitControls.js"></script>
+		<script src="js/jquery-2.1.0.min.js"></script>
+		
 		<script>
 		
-			if (!Detector.webgl) Detector.addGetWebGLMessage ();
+			if (!Detector.webgl) {
+				
+				Detector.addGetWebGLMessage ();
+				
+				$("#loading").fadeOut();
+			}
 			
 			var container, stats;
 			
@@ -268,7 +285,8 @@
 				// stats
 				stats = new Stats ();
 				stats.domElement.style.position = 'absolute';
-				stats.domElement.style.top = '0px';
+				stats.domElement.style.bottom = '0px';
+				stats.domElement.style.right = '0px';
 				container.appendChild (stats.domElement);
 				
 				// event listener
@@ -277,7 +295,7 @@
 				
 				timer = Date.now ();
 				
-				var fps = 20;
+				var fps = 30;
 				setInterval (animate, 1000 / fps);
 			}
 
@@ -336,10 +354,19 @@
 				}
 			}
 
-
+			var finishLoading = false;
 			function animate () {
 				
 				//requestAnimationFrame (animate);
+				
+				if (!finishLoading) {
+					
+					if (stlIsLoaded ()) {
+						
+						$("#loading").fadeOut();
+						finishLoading = true;
+					}
+				}
 				
 				rotateMeshes ();
 				render ();
@@ -364,22 +391,46 @@
 				
 				var speed = 0.0001;
 				
-				if (frame_mesh && pannels_mesh && antennas_mesh) {
+				if (stlIsLoaded ()) {
 					
-					if (boards_mesh && batteries_mesh && telecoms_mesh && weights_mesh) {
-						
-						frame_mesh.rotation.y += speed * dt;
-						pannels_mesh.rotation.y += speed * dt;
-						antennas_mesh.rotation.y += speed * dt;
-						
-						boards_mesh.rotation.y += speed * dt;
-						batteries_mesh.rotation.y += speed * dt;
-						telecoms_mesh.rotation.y += speed * dt;
-						weights_mesh.rotation.y += speed * dt;
-					}
+					frame_mesh.rotation.y += speed * dt;
+					pannels_mesh.rotation.y += speed * dt;
+					antennas_mesh.rotation.y += speed * dt;
+					
+					boards_mesh.rotation.y += speed * dt;
+					batteries_mesh.rotation.y += speed * dt;
+					telecoms_mesh.rotation.y += speed * dt;
+					weights_mesh.rotation.y += speed * dt;
 				}
-				else {
+				else;
+				
+			}
+			
+			function stlIsLoaded ()
+			{
+				if (!frame_mesh) {
+					return false;
 				}
+				else if (!pannels_mesh) {
+					return false;
+				}
+				else if (!antennas_mesh) {
+					return false;
+				}
+				else if (!boards_mesh) {
+					return false;
+				}
+				else if (!batteries_mesh) {
+					return false;
+				}
+				else if (!telecoms_mesh) {
+					return false;
+				}
+				else if (!weights_mesh) {
+					return false;
+				}
+				
+				return true;
 			}
 
 		</script>
