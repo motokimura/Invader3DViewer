@@ -47,7 +47,7 @@
 	<body>
 		<div id="info">
 			<a href="http://artsat.jp/invader" target="_blank">ARTSAT1:INVADER</a> -
-			3D Viewer by <a href="https://github.com/ARTSAT" target="_blank">ARTSAT Project</a>
+			3D Viewer by <a href="https://github.com/ARTSAT/Invader3DViewer" target="_blank">ARTSAT Project</a>
 		</div>
 		
 		<div id="loading">
@@ -105,7 +105,7 @@
 				scene = new THREE.Scene ();
 				
 				// mesh
-				var scale = 0.008;
+				var scale = 0.007;
 
 				// mesh of frame
 				var frameLoader = new THREE.STLLoader ();
@@ -393,14 +393,14 @@
 				
 				if (stlIsLoaded ()) {
 					
-					frame_mesh.rotation.y += speed * dt;
-					pannels_mesh.rotation.y += speed * dt;
-					antennas_mesh.rotation.y += speed * dt;
+					frame_mesh.rotation.y     += speed * dt;
+					pannels_mesh.rotation.y   += speed * dt;
+					antennas_mesh.rotation.y  += speed * dt;
 					
-					boards_mesh.rotation.y += speed * dt;
+					boards_mesh.rotation.y    += speed * dt;
 					batteries_mesh.rotation.y += speed * dt;
-					telecoms_mesh.rotation.y += speed * dt;
-					weights_mesh.rotation.y += speed * dt;
+					telecoms_mesh.rotation.y  += speed * dt;
+					weights_mesh.rotation.y   += speed * dt;
 				}
 				else;
 				
