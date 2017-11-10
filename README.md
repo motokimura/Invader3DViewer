@@ -4,7 +4,7 @@ A 3D viewer for INVADER, writted in Javascript.
 
 ## Description
 
-[INVADER](http://artsat.jp/en/project/invader), a nano-satellite developed by ARTSAT project, can be viewed on your browser. 
+[INVADER](http://artsat.jp/en/project/invader), a nano-satellite developed by [ARTSAT project](http://artsat.jp), can be viewed on your browser. 
 You can zoom in/out and rotate the satellite.
 
 ## Demo
