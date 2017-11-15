@@ -9,7 +9,7 @@ You can zoom in/out and rotate the satellite.
 
 ## Demo
 
-http://mokk.net/invader3d/
+https://motokimura.github.io/invader-3d-viewer/
 
 ## Screen shot
 
