@@ -21,8 +21,10 @@ A browser that supports WebGL (Google Chrome is recommended).
 
 ## Licence
 
-This software is released under the MIT License, see LICENSE.txt.
+[MIT License](LICENSE.txt)
 
-## Author
+## Team
 
 [Motoki Kimura](https://github.com/motokimura)
+
+[ARTSAT Project](https://github.com/ARTSAT)
