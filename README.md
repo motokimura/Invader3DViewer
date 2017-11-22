@@ -15,7 +15,7 @@ http://motokimura.github.io/invader-3d-viewer/
 
 <img src="https://raw.githubusercontent.com/motokimura/Invader3DViewer/master/screen_capture.png" />
 
-## Requirement
+## Requirements
 
 A browser that supports WebGL (Google Chrome is recommended).
 
