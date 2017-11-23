@@ -11,15 +11,15 @@ You can zoom in/out and rotate the satellite.
 
 http://motokimura.github.io/invader-3d-viewer/
 
-## Screen shot
+## Screenshot
 
-<img src="https://raw.githubusercontent.com/motokimura/Invader3DViewer/master/screen_capture.png" />
+<img src="screen_capture.png" />
 
 ## Requirements
 
 A browser that supports WebGL (Google Chrome is recommended).
 
-## Licence
+## License
 
 [MIT License](LICENSE.txt)
 
