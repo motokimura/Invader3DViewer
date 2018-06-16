@@ -1,4 +1,4 @@
-Invader3DViewer
+Invader 3D-viewer
 ====
 A 3D viewer for INVADER, writted in Javascript.
 
@@ -9,7 +9,7 @@ You can zoom in/out and rotate the satellite.
 
 ## Demo
 
-http://motokimura.github.io/invader-3d-viewer/
+http://motokimura.github.io/invader-3d/
 
 ## Screenshot
 
