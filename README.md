@@ -1,4 +1,4 @@
-Invader 3D-viewer
+INVADER 3D-viewer
 ====
 A 3D viewer for INVADER nano-satellite with Three.js.
 
